@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Dogs Photo</title>
+    <style>
+      body {
+        background: #003333;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        padding: 10px;
+        background: linear-gradient(to bottom right, #006969, #0c4646);
+      }
+      .card {
+        margin: 5px;
+        padding: 10px;
+        text-align: center;
+        width: 50%;
+        background: linear-gradient(to bottom right, #92c2da, #c0c0c0);
+        border-radius: 5px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 10px;
+      }
+
+      li {
+        display: inline-block;
+        padding: 0;
+        margin: 3px;
+        background: #353535;
+        width: 200px;
+        height: 200px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 5px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      button {
+        padding: 0.8rem;
+        border: none;
+        font-size: 1.5rem;
+        outline: none;
+        background: #066832;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+
+      button:hover {
+        transition: all 0.5s;
+        background: #0c994b;
+      }
+
+      button:active {
+        background: #136136;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./RandomDogsPhoto.js"></script>
+  </body>
+</html>
