@@ -1,3 +1,125 @@
-/* 
-  Write here your CSS rules for HackYourRepo!
-*/
+:root {
+  --main-color: #bdbdbd;
+  --radius : 2px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.root {
+  width: 70vw;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+  background: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+.header select {
+  font-size: 2vmin;
+  width: 10em;
+  margin-left: 1rem;
+  padding: .1rem;
+  background-color: #c9c9c9;
+  outline-color: white;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  margin-top: .3rem;
+}
+
+.repo-container, .contributors-container {
+  width: 50%;
+  margin: .2rem;
+  
+}
+
+.repo-content {
+  padding: .5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+.repo-content p {
+  font-size: 2vmin;
+  margin: .5rem;
+}
+
+.repo-content strong {
+  display: inline-block;
+  width: 5.5em;
+  vertical-align: top;
+}
+
+.repo-content span {
+  display: inline-block;
+  width: 65%;
+  padding-left: 1rem;
+}
+
+.contributors-container p {
+  color: var(--main-color);
+  border: 1px solid #bbbbbb;
+  border-bottom: none;
+  border-radius: var(--radius);
+  font: 2vmin;
+  padding: 1em;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+@media (max-width: 770px) {
+  .root {
+    width: 80%;
+  }
+
+  .header select, .repo-content p {
+    font-size: 3vmin;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .repo-container, .contributors-container {
+    width: 100%;
+  }
+
+  .repo-container span {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .root {
+    width: 100%;
+  }
+
+  .header select, .repo-content p {
+    font-size: 1rem;
+  }
+
+  .section, .repo-container {
+    margin: .2rem 0;
+  }
+
+  .repo-content span {
+    width: 70%;
+  }
+}
