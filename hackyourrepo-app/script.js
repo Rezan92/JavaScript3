@@ -53,7 +53,7 @@ function app() {
         });
       })
       .catch(error => {
-        mainContainer.innerHTML = `<p class="error">Network request failed</p>`
+        mainContainer.innerHTML = `<p class="error">${error}</p>`
       })
   };
 
@@ -72,7 +72,7 @@ function app() {
           };
         };
       })
-      .catch(error => console.log(error))
+      .catch(error => repoContent.innerHTML = `<p class="error">${error}</p>`)
   };
 
   function addElementToRepoContent(obj) {
