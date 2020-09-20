@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app{
+  width: 70%;
+  margin: auto;
+  padding: 1rem;
+}
+
+header h1{
+  margin: 1rem 0;
+}
+
+.container p {
+  padding: .3rem;
+}
+
+.trivia-container {
+  margin: .5rem 0;
+  background: #ebebeb;
+}
+
+.trivia-card .question {
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.trivia-card .question:hover {
+  background-color: #999999;
+}
+
+.trivia-card .question:active {
+  background-color: #808080;
+}
+
+.trivia-card .answer{
+  display: none;
+  background: white;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px #e7e7e7;
+}
+
+.active {
+  background-color: #999999;
+}
