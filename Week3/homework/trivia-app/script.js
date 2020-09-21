@@ -25,8 +25,8 @@ window.onload = function main() {
     questions.className = "question";
     answer.className = "answer";
 
-    questions.textContent = removeEntities(obj.question);
-    answer.textContent = removeEntities(obj.correct_answer);
+    questions.textContent = decodeEntities(obj.question);
+    answer.textContent = decodeEntities(obj.correct_answer);
 
     triviaContainer.appendChild(card);
     card.appendChild(questions);
@@ -47,13 +47,20 @@ window.onload = function main() {
     };
   };
 
-  function removeEntities(str) {
+  function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
+  function decodeEntities(str) {
     const cleanString = [];
     str.split(" ").forEach(elem => {
       if (elem.includes("&") && elem.includes(";")) {
         const entity = elem.substring(elem.indexOf("&"), elem.indexOf(";") + 1);
+        const decoded = decodeHtml(entity)
         const regex = new RegExp(entity, "gi");
-        cleanString.push(elem.replace(regex, ""));
+        cleanString.push(elem.replace(regex, decoded));
       } else {
         cleanString.push(elem);
       };
