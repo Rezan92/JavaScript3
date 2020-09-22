@@ -1,3 +1,203 @@
 /* 
   Write here your CSS rules for HackYourRepo!
 */
+
+:root {
+  --main-color: #bdbdbd;
+  --radius: 3px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.root {
+  width: 70vw;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+  background: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+.header select {
+  font-size: 2.5vmin;
+  width: 10em;
+  margin-left: 1rem;
+  padding: .1rem;
+  background-color: #c9c9c9;
+  border-radius: 3px;
+}
+
+.header select:focus {
+  outline: 1px solid white;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  margin-top: .3rem;
+}
+
+.repo-container, .contributors-container {
+  width: 50%;
+  margin: .2rem;
+}
+
+.contributors-container {
+  height: calc(100vh - 68px);
+  position: relative;
+}
+
+.repo-content {
+  padding: .5rem;
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+.repo-content p {
+  font-size: 2vmin;
+  margin: .5rem;
+}
+
+.repo-content strong {
+  display: inline-block;
+  width: 5.5em;
+  vertical-align: top;
+}
+
+.repo-content span {
+  display: inline-block;
+  width: 65%;
+  padding-left: 1rem;
+}
+
+.contributors-container p, .contributors-card {
+  color: var(--main-color);
+  border: 1px solid #bbbbbb;
+  border-bottom: none;
+  border-radius: var(--radius);
+  font-size: 2vmin;
+  padding: 1em;
+  box-shadow: 2px 2px 5px var(--main-color);
+}
+
+.contributors-card {
+  display: flex;
+  margin: .5rem 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contributors-card img {
+  width: 50px;
+}
+
+.contributors-card a {
+  margin-left: 1rem;
+  font-size: 2vmin;
+}
+
+.contributors-card p {
+  margin-left: auto;
+  padding: .2em .5em;
+  border-radius: var(--radius);
+  background: #a9a9a9;
+  color: white;
+}
+
+.error {
+  width: 100%;
+  padding: 1rem;
+  color: #b75a24;
+  background-color: #f8d7da;
+}
+
+p.pagination {
+  display: none;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+}
+
+.pagination button {
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  margin: 1px;
+  text-decoration: none;
+  transition: background-color .3s;
+  font-size: 1.5rem;
+}
+
+.pagination button.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination button:hover:not(.active) {
+  background-color: #ddd;
+}
+
+@media (max-width: 770px) {
+  .root {
+    width: 80%;
+  }
+  .header select, .repo-content p, .contributors-container p, .contributors-card a {
+    font-size: 3vmin;
+  }
+  .main-container {
+    flex-direction: column;
+  }
+  .repo-container, .contributors-container {
+    width: 100%;
+  }
+  .repo-container span {
+    width: 70%;
+  }
+  p.pagination{
+    position: relative;
+    bottom: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .root {
+    width: 100%;
+  }
+  .contributors-container{
+    height: auto;
+  }
+  .header select, .repo-content p, .contributors-container p, .contributors-card a {
+    font-size: 1rem;
+  }
+  .section, .repo-container {
+    margin: .2rem 0;
+  }
+  .repo-content span {
+    width: 70%;
+  }
+}
+
+@media (max-width: 345px) {
+  .repo-content span {
+    width: 63%;
+  }
+}
